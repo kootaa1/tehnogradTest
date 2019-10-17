@@ -84,10 +84,6 @@ namespace TestTaskTehnograd.Models
             {
                 var result = _instance.TodoStorage[index];
                 _instance.TodoStorage.Remove(_instance.TodoStorage[index]);
-                for (int i = 0; i < _instance.TodoStorage.Count; i++)
-                {
-                    _instance.TodoStorage[i].Id = i;
-                }
                 return result;
             }
             return null;
