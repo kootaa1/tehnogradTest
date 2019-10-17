@@ -22,7 +22,7 @@ namespace TestTaskTehnograd.Controllers
         public async Task<ActionResult<List<TodoItem>>> GetTodoItems()
         {
             var result = storage.GetItems();
-            if (result == null)
+            if (result.Count == 0)
                 return NotFound();
             else return result;
         }

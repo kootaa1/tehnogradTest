@@ -11,8 +11,6 @@ import { TodoDataService } from './todo-data.service';
 
 export class AppComponent {
 
-    title = 'app';
-
     todos: Todo[] = [];
     newTodo: Todo = new Todo();
 
@@ -20,23 +18,13 @@ export class AppComponent {
     }
     ngOnInit() {
         this.todoDataService.getAllTodos()
-            .subscribe(
-                (todos) => {
-                    this.todos = todos;
-                }
-            );
-        console.debug(this.todos);
+            .subscribe( todos => this.todos = todos);
     }
 
     addTodo() {
         this.todoDataService.addTodo(this.newTodo)
-            .subscribe(
-                (newTodo) => {
-                    this.todos = this.todos.concat(newTodo);
-                }
-            )
-
-        console.log('debug addTodo', 'ID: ' + this.newTodo.id + ' NAME: ' + this.newTodo.name + ' STATUS: ' + this.newTodo.isComplete);
+            .subscribe(newTodo => this.todos = this.todos.concat(newTodo))
+        this.newTodo.name = '';
     }
 
     toggleTodoComplete(todo: Todo) {
@@ -47,10 +35,7 @@ export class AppComponent {
 
     removeTodo(todo: Todo) {
         this.todoDataService.deleteTodoById(todo.id)
-            .subscribe(
-                (_) => this.todos = this.todos.filter((t) => t.id !== todo.id)
-            );
-        console.debug('debug: Delete: ', todo);
+            .subscribe((_) => this.todos = this.todos.filter((t) => t.id !== todo.id));
     }
 
     // getTodos() {

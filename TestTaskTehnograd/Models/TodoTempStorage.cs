@@ -19,24 +19,24 @@ namespace TestTaskTehnograd.Models
             {
                 _instance = new TodoTempStorage();
 
-                _instance.AddItem(new TodoItem
-                {
-                    Id = 1,
-                    IsComplete = true,
-                    Name = "Do something 1"
-                });
-                _instance.AddItem(new TodoItem
-                {
-                    Id = 2,
-                    IsComplete = false,
-                    Name = "Do something 2"
-                });
-                _instance.AddItem(new TodoItem
-                {
-                    Id = 3,
-                    IsComplete = true,
-                    Name = "Do something 3"
-                });
+                //_instance.AddItem(new TodoItem
+                //{
+                //    Id = 1,
+                //    IsComplete = true,
+                //    Name = "Do something 1"
+                //});
+                //_instance.AddItem(new TodoItem
+                //{
+                //    Id = 2,
+                //    IsComplete = false,
+                //    Name = "Do something 2"
+                //});
+                //_instance.AddItem(new TodoItem
+                //{
+                //    Id = 3,
+                //    IsComplete = true,
+                //    Name = "Do something 3"
+                //});
             }
             return _instance;
         }
